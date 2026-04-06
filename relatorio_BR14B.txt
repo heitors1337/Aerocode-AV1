@@ -1,0 +1,9 @@
+RELATÓRIO DE ENTREGA - AEROCODE
+-------------------------------------
+Cliente: Cliente Especial | Data: 09/04/2026
+Aeronave: 14-Bis Moderno (Cód: BR14B)
+Status das Etapas:
+- Montagem Estrutura: Concluída
+- Pintura: Concluída
+Testes Realizados:
+- Hidráulico: Aprovado

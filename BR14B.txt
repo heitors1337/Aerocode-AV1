@@ -1,0 +1,35 @@
+{
+  "codigo": "BR14B",
+  "modelo": "14-Bis Moderno",
+  "tipo": "Comercial",
+  "capacidade": 8,
+  "alcance": 500,
+  "pecas": [
+    {
+      "nome": "Asa Direita",
+      "tipo": "Nacional",
+      "fornecedor": "Embraer Parts",
+      "status": "Pronta"
+    }
+  ],
+  "etapas": [
+    {
+      "nome": "Montagem Estrutura",
+      "prazo": "10 dias",
+      "status": "Concluída",
+      "funcionarios": []
+    },
+    {
+      "nome": "Pintura",
+      "prazo": "3 dias",
+      "status": "Concluída",
+      "funcionarios": []
+    }
+  ],
+  "testes": [
+    {
+      "tipo": "Hidráulico",
+      "resultado": "Aprovado"
+    }
+  ]
+}
