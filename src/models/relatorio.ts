@@ -1,22 +1,29 @@
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { Aeronave } from './aeronave.js';
-import { Etapa } from './etapa.js';
-import { Teste } from './teste.js'
-import fs from 'node:fs';
-
 
 export class Relatorio {
-    static gerar(aeronave: Aeronave, cliente: string): void {
-        const data = new Date().toLocaleDateString();
-        let conteudo = `RELATÓRIO DE ENTREGA - AEROCODE\n`;
-        conteudo += `-------------------------------------\n`;
-        conteudo += `Cliente: ${cliente} | Data: ${data}\n`;
-        conteudo += `Aeronave: ${aeronave.modelo} (Cód: ${aeronave.codigo})\n`;
-        conteudo += `Status das Etapas:\n`;
-        aeronave.etapas.forEach((e: Etapa) => conteudo += `- ${e.nome}: ${e.status}\n`);
-        conteudo += `Testes Realizados:\n`;
-        aeronave.testes.forEach((t: Teste) => conteudo += `- ${t.tipo}: ${t.resultado}\n`);
+    static gerar(aeronave: Aeronave, cliente: string, dataEntrega = new Date()): string {
+        const dataFormatada = dataEntrega.toLocaleDateString('pt-BR');
+        const linhas = [
+            'RELATORIO FINAL DE ENTREGA - AEROCODE',
+            '=====================================',
+            `Cliente: ${cliente}`,
+            `Data de entrega: ${dataFormatada}`,
+            '',
+            'AERONAVE',
+            aeronave.detalhes(),
+            '',
+            `Situacao para entrega: ${aeronave.prontaParaEntrega() ? 'Liberada' : 'Pendente'}`
+        ];
+        return linhas.join('\n');
+    }
 
-        fs.writeFileSync(`./relatorio_${aeronave.codigo}.txt`, conteudo);
-        console.log("Relatório gerado com sucesso!");
+    static salvar(aeronave: Aeronave, cliente: string, diretorio = './relatorios'): string {
+        mkdirSync(diretorio, { recursive: true });
+        const codigoSeguro = aeronave.codigo.replace(/[^a-z0-9_-]/gi, '_');
+        const caminho = join(diretorio, `relatorio_${codigoSeguro}.txt`);
+        writeFileSync(caminho, Relatorio.gerar(aeronave, cliente), 'utf-8');
+        return caminho;
     }
 }

@@ -1,38 +1,38 @@
-export enum TipoAeronave { 
+export enum TipoAeronave {
     COMERCIAL = "Comercial",
     MILITAR = "Militar"
 }
 
-export enum TipoPeca { 
-    NACIONAL = "Nacional", 
-    IMPORTADA = "Importada" 
+export enum TipoPeca {
+    NACIONAL = "Nacional",
+    IMPORTADA = "Importada"
 }
 
-export enum StatusPeca { 
-    EM_PRODUCAO = "Em Produção",
-    EM_TRANSPORTE = "Em Transporte",
-    PRONTA = "Pronta" 
+export enum StatusPeca {
+    EM_PRODUCAO = "Em producao",
+    EM_TRANSPORTE = "Em transporte",
+    PRONTA = "Pronta"
 }
 
-export enum StatusEtapa { 
+export enum StatusEtapa {
     PENDENTE = "Pendente",
-    ANDAMENTO = "Em Andamento", 
-    CONCLUIDA = "Concluída" 
+    ANDAMENTO = "Em andamento",
+    CONCLUIDA = "Concluida"
 }
 
-export enum NivelPermissao { 
-    ADMINISTRADOR = "Admin",
-    ENGENHEIRO = "Engenheiro", 
-    OPERADOR = "Operador" 
+export enum NivelPermissao {
+    ADMINISTRADOR = "Administrador",
+    ENGENHEIRO = "Engenheiro",
+    OPERADOR = "Operador"
 }
 
-export enum TipoTeste { 
-    ELETRICO = "Elétrico", 
-    HIDRAULICO = "Hidráulico", 
-    AERODINAMICO = "Aerodinâmico"
+export enum TipoTeste {
+    ELETRICO = "Eletrico",
+    HIDRAULICO = "Hidraulico",
+    AERODINAMICO = "Aerodinamico"
 }
 
 export enum ResultadoTeste {
-    APROVADO = "Aprovado", 
-    REPROVADO = "Reprovado" 
+    APROVADO = "Aprovado",
+    REPROVADO = "Reprovado"
 }
